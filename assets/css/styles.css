@@ -2,13 +2,13 @@
 
 /* Variables */
 :root {
-  --font-family: "Roboto", sans-serif;
+  --font-family: "Roboto", sans-serf;
   --normal-font: 400;
   --bold-font: 700;
   --bolder-font: 900;
-  --bg-color: #333333; /* dark grey background */
-  --primary-color: #4ecca3; /* blue primary color */
-  --secondary-color: #ff7235; /* orange secondary color */
+  --bg-color: #fcfcfc;
+  --primary-color: #4756df;
+  --secondary-color: #ff7235;
   --primary-shadow: #8b8eaf;
   --secondary-shadow: #a17a69;
   --bottom-margin: 0.5rem;
@@ -231,6 +231,7 @@ nav ul.show {
   padding: 20px;
   margin: 10px;
 }
+
 
 .scroll-up {
   position: fixed;
