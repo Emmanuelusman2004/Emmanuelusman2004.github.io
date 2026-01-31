@@ -1,0 +1,85 @@
+body {
+  background-color: #f9f9f9;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.recap-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  width: 300px;
+  position: relative;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-bottom: 2px solid #eaeaea;
+}
+
+.card-description {
+  padding: 15px;
+  text-align: center;
+}
+
+.card-title {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.card-text {
+  font-size: 1em;
+  color: #555;
+}
+
+.confetti {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  display: none; /* Hidden by default */
+}
+
+.show-confetti {
+  display: block; /* Show confetti when triggered */
+}
+
+.valentine-prompt {
+  margin-top: 20px;
+  font-size: 1.5em;
+  text-align: center;
+  color: #e63946;
+}
+
+.valentine-button {
+  background-color: #f1faee;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+.valentine-button:hover {
+  background-color: #a8dadc;
+}

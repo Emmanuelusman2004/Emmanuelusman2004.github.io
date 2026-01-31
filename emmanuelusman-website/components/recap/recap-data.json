@@ -1,0 +1,53 @@
+{
+  "memories": [
+    {
+      "title": "Our First Date",
+      "description": "Remember our first date at the cozy little café? We talked for hours and laughed so much!",
+      "image": "assets/photos/first_date.jpg",
+      "date": "2023-01-15",
+      "special": false
+    },
+    {
+      "title": "Beach Day",
+      "description": "The day we spent at the beach, building sandcastles and enjoying the sun.",
+      "image": "assets/photos/beach_day.jpg",
+      "date": "2023-03-10",
+      "special": false
+    },
+    {
+      "title": "Anniversary Celebration",
+      "description": "Celebrating our anniversary with a romantic dinner and a beautiful sunset.",
+      "image": "assets/photos/anniversary.jpg",
+      "date": "2023-06-20",
+      "special": true
+    },
+    {
+      "title": "Movie Night",
+      "description": "Our cozy movie nights with popcorn and our favorite films.",
+      "image": "assets/photos/movie_night.jpg",
+      "date": "2023-08-05",
+      "special": false
+    },
+    {
+      "title": "Surprise Picnic",
+      "description": "The surprise picnic you organized for me in the park. It was so thoughtful!",
+      "image": "assets/photos/picnic.jpg",
+      "date": "2023-09-12",
+      "special": true
+    },
+    {
+      "title": "Halloween Costume Party",
+      "description": "Dressing up together for the Halloween party and winning the best couple costume!",
+      "image": "assets/photos/halloween.jpg",
+      "date": "2023-10-31",
+      "special": false
+    },
+    {
+      "title": "Winter Wonderland",
+      "description": "Our trip to the winter festival, enjoying hot cocoa and the beautiful lights.",
+      "image": "assets/photos/winter_festival.jpg",
+      "date": "2023-12-15",
+      "special": true
+    }
+  ]
+}

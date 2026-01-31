@@ -1,0 +1,160 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+nav {
+  background-color: #4CAF50;
+  padding: 15px;
+  text-align: center;
+}
+
+h1 {
+  color: white;
+}
+
+.navigation {
+  list-style-type: none;
+  padding: 0;
+}
+
+.navigation li {
+  display: inline;
+  margin: 0 15px;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px;
+}
+
+.hero-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.bio {
+  margin-left: 20px;
+}
+
+.bio-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.bio-text {
+  font-size: 16px;
+}
+
+.bio-a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+.skills {
+  padding: 20px;
+  background-color: #fff;
+}
+
+.skill-header {
+  text-align: center;
+  font-size: 24px;
+}
+
+.skills-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+}
+
+.projects {
+  padding: 20px;
+}
+
+.projects-title {
+  text-align: center;
+  font-size: 24px;
+}
+
+.project-container {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.project-pic {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.project-title {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.project-details {
+  font-size: 14px;
+}
+
+.project-link {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+.column-2a {
+  padding: 20px;
+}
+
+.education-entry {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.education-details {
+  flex: 1;
+}
+
+.school-icon {
+  margin-left: 20px;
+}
+
+.contact-section {
+  padding: 20px;
+  background-color: #fff;
+}
+
+.contact-details {
+  font-size: 16px;
+}
+
+.scroll-up {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.scroll-up img {
+  width: 40px;
+  height: 40px;
+}
