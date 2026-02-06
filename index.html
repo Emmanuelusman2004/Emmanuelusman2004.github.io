@@ -80,6 +80,22 @@
     .overlay .message .letter{font-family:'Playfair Display',serif;max-width:680px;text-align:left;color:var(--muted);line-height:1.6;font-size:18px;padding:8px 4px;white-space:pre-wrap}
     .overlay .message .signature{margin-top:18px;text-align:right;font-family:'Playfair Display',serif;font-size:18px;color:var(--accent)}
 
+    /* relationship timer */
+    .timer{margin-top:12px;font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto;font-size:16px;color:var(--muted)}
+    .timer .value{font-weight:600;color:var(--accent);margin-left:6px}
+
+    /* letters gallery */
+    .letters-section{max-width:980px;width:100%;margin-top:28px;padding:18px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.6),rgba(255,255,255,0.8));box-shadow:var(--card-shadow)}
+    .letters-section h2{margin:0 0 8px;font-family:'Playfair Display',serif}
+    /* make each grid item wider so thumbnails are larger */
+    .letters-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:16px;align-items:start}
+    .letter-card{background:white;border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.08);display:flex;flex-direction:column}
+    .letter-card img{width:100%;height:220px;object-fit:cover;display:block}
+    .letter-card figcaption{padding:10px 12px;font-size:15px;color:var(--muted);text-align:center}
+
+    @media (max-width:600px){
+      .letter-card img{height:160px}
+    }
   </style>
 </head>
 
@@ -100,6 +116,8 @@
     <section class="hero" aria-labelledby="recap-title">
       <h2 id="recap-title">Nuestros Momentos</h2>
       <p>Fotos y notas pequeñas de nuestros momentos favoritos. Ojala te gusta, depronto se me olvida de unas cositas y otros detalles jajaja Y al fin hay una preguntita importante😱</p>
+      <p>❤️</p>
+      <div class="timer" aria-live="polite">Estamos Juntos Por: <span id="timerValue" class="value">calculando...</span></div>
     </section>
 
     <section class="deck-wrap" aria-roledescription="carousel">
@@ -334,7 +352,7 @@
         <article class="card" role="group" aria-roledescription="slide" aria-label="Memory 34 of 48" data-index="33">
           <div class="card-inner">
             <div class="photo"><img src="assets/images/nosfuimosacali.jpeg" alt="We left to Cali"></div>
-            <div class="note"><h3>We left to Cali</h3><p>Nos fuimos a Cali, como extraño a tu y a Cali😔</p></div>
+            <div class="note"><h3>We left to Cali</h3><p>Nos fuimos a Cali, como extraño a Cali😔</p></div>
           </div>
         </article>
 
@@ -459,6 +477,27 @@
       <button class="nav-btn nav-next" aria-label="Next">›</button>
     </section>
 
+    <!-- Letters gallery section -->
+    <section class="letters-section" aria-labelledby="letters-title">
+      <h2 id="letters-title">Las Cartitas que me encanta escribirte</h2>
+      <p style="color:var(--muted);margin:0">Aquí hay algunas de las cartas que te he escrito 😘 Creo que me faltan algunas pero tu ya las tenes toditas. Te voy a escribir muchos mas ❤️Te amo</p>
+      <div class="letters-grid">
+        <figure class="letter-card"><img src="assets/images/lettercard.jpeg" alt="Carta 1"></figure>
+        <figure class="letter-card"><img src="assets/images/letterdraw.jpeg" alt="Carta 2"></figure>
+        <figure class="letter-card"><img src="assets/images/letterlove.jpeg" alt="Carta 3"></figure>
+        <figure class="letter-card"><img src="assets/images/letterportrait.jpeg" alt="Carta 4"></figure>
+        <figure class="letter-card"><img src="assets/images/letterpress.jpeg" alt="Carta 5"></figure>
+        <figure class="letter-card"><img src="assets/images/letterspinbetter.jpeg" alt="Carta 6"></figure>
+        <figure class="letter-card"><img src="assets/images/lettertired.jpeg" alt="Carta 7"></figure>
+        <figure class="letter-card"><img src="assets/images/letterstick.jpeg" alt="Carta 8"></figure>
+        <figure class="letter-card"><img src="assets/images/Letterstars.jpeg" alt="Carta 9"></figure>
+        <figure class="letter-card"><img src="assets/images/letterspecialmoments.jpeg" alt="Carta 10"></figure>
+        <figure class="letter-card"><img src="assets/images/firstletter.jpeg" alt="Carta 11"></figure>
+        <figure class="letter-card"><img src="assets/images/secondletter.jpeg" alt="Carta 12"></figure>
+
+      </div>
+    </section>
+
   </main>
 
   <!-- celebration overlay -->
@@ -472,6 +511,40 @@
 
   <script>
     (function(){
+      // update the relationship timer (since 6 May 2025)
+      function updateTimer(){
+        const start = new Date(2025,4,6,0,0,0); // months are 0-indexed -> 4 = May
+        const now = new Date();
+
+        // months difference (whole months)
+        let months = (now.getFullYear() - start.getFullYear()) * 12 + (now.getMonth() - start.getMonth());
+        if(now.getDate() < start.getDate()) months -= 1;
+
+        // compute remainder after adding months to start
+        const startPlusMonths = new Date(start.getTime());
+        startPlusMonths.setMonth(start.getMonth() + months);
+        // adjust if month rollover caused date shift
+        if(startPlusMonths.getDate() !== start.getDate()){
+          // normalize by setting to the original day or last day of month
+          startPlusMonths.setDate(start.getDate());
+        }
+
+        let remMs = now - startPlusMonths;
+        if(remMs < 0){ remMs = 0; }
+        const dayMs = 24 * 60 * 60 * 1000;
+        const hourMs = 60 * 60 * 1000;
+        const days = Math.floor(remMs / dayMs);
+        remMs -= days * dayMs;
+        const hours = Math.floor(remMs / hourMs);
+
+        const el = document.getElementById('timerValue');
+        if(el){ el.textContent = `${months} meses, ${days} días😍`; }
+      }
+
+      // run immediately and every minute
+      updateTimer();
+      setInterval(updateTimer, 60 * 1000);
+
       const deck = document.getElementById('deck');
       const cards = Array.from(deck.querySelectorAll('.card'));
       const prev = document.querySelector('.nav-prev');
